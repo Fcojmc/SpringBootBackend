@@ -1,6 +1,7 @@
 package com.capman.entity;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -21,6 +22,17 @@ public class Project {
 	@Column(name = "end_date")
 	LocalDate endDate;
 	
+	@OneToMany(mappedBy = "project")
+	private Set<EmployeeProjectPeriod> epp;
+	
+	
+	
+	public Set<EmployeeProjectPeriod> getEpp() {
+		return epp;
+	}
+	public void setEpp(Set<EmployeeProjectPeriod> epp) {
+		this.epp = epp;
+	}
 	public Integer getId() {
 		return id;
 	}

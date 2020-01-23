@@ -27,7 +27,9 @@ public class EmployeeProjectPeriod {
 	@JoinColumn(name = "employee_id", insertable = false, updatable = false)
 	private Employee employee;
 	
-	
+	@ManyToOne
+	@JoinColumn(name = "project_id", insertable = false, updatable = false)
+	private Project project;
 	
 	public Employee getEmployee() {
 		return employee;
