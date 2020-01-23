@@ -34,7 +34,13 @@ public class Employee {
 	@OneToMany(mappedBy = "employee")
 	private Set<EmployeeProjectPeriod> epp;
 	
-	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "employees_projects",
+			joinColumns = @JoinColumn(name = "employee_id"),
+			inverseJoinColumns = @JoinColumn (name= "project_id")
+			)
+	Set<Project> projectsEmployees;
 
 	public User getUser() {
 		return user;

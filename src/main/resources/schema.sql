@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS employee_project_periods;
 DROP TABLE IF EXISTS absences;
+DROP TABLE IF EXISTS projects;
 DROP TABLE  IF EXISTS employees;
 DROP TABLE  IF EXISTS users;
 

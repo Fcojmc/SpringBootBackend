@@ -31,6 +31,13 @@ public class EmployeeProjectPeriod {
 	@JoinColumn(name = "project_id", insertable = false, updatable = false)
 	private Project project;
 	
+	
+	public Project getProject() {
+		return project;
+	}
+	public void setProject(Project project) {
+		this.project = project;
+	}
 	public Employee getEmployee() {
 		return employee;
 	}

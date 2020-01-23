@@ -30,7 +30,6 @@ public class ProjectController {
 	@PostMapping
 	public Project add(@RequestBody Project p) { 
 		if(p.getStartDate() == null) { p.setStartDate(LocalDate.now()); }
-		if(p.getEndDate() == null) { p.setEndDate(LocalDate.now()); }
 		
 		return service.add(p); 
 	}

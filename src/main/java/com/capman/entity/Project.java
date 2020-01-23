@@ -25,14 +25,9 @@ public class Project {
 	@OneToMany(mappedBy = "project")
 	private Set<EmployeeProjectPeriod> epp;
 	
+	@ManyToMany(mappedBy="projectsEmployees")
+	Set<Employee>employees;
 	
-	
-	public Set<EmployeeProjectPeriod> getEpp() {
-		return epp;
-	}
-	public void setEpp(Set<EmployeeProjectPeriod> epp) {
-		this.epp = epp;
-	}
 	public Integer getId() {
 		return id;
 	}
