@@ -1,6 +1,10 @@
 package com.capman.entity;
 
+import java.util.Set;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "skill")
 @Table(name = "skills")
@@ -14,6 +18,15 @@ public class Skill {
 	private String name;
 	@Column(name ="description")
 	private String description;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy="skillsEmployees")
+	Set<Employee>employees;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy="projectSkills")
+	Set<Project>projects;
+	
 	public Integer getId() {
 		return id;
 	}

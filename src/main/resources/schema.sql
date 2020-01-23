@@ -1,4 +1,8 @@
+
+DROP TABLE IF EXISTS employees_projects;
 DROP TABLE IF EXISTS employee_project_periods;
+DROP TABLE IF EXISTS employees_skills;
+DROP TABLE IF EXISTS projects_skills;
 DROP TABLE IF EXISTS absences;
 DROP TABLE IF EXISTS projects;
 DROP TABLE  IF EXISTS employees;
@@ -54,3 +58,12 @@ CREATE TABLE employees_projects (
 	project_id INT REFERENCES projects(id)
 );
 
+CREATE TABLE projects_skills(
+	project_id INT REFERENCES projects(id),
+	skill_id INT REFERENCES skills(id)
+);
+
+CREATE TABLE employees_skills(
+	employee_id INT REFERENCES employees(id),
+	skill_id INT REFERENCES skills(id)
+);
